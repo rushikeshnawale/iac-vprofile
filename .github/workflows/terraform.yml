@@ -22,13 +22,13 @@ env:
  EKS_CLUSTER: vprofile-eks
 
 jobs:
-   terraform:
-     name: "Apply terraform code changes"
-     runs-on: ubuntu-latest
-     defaults:
-       run:
-         shell: bash
-         working-directory: ./terraform
+  terraform:
+    name: "Apply terraform code changes"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./terraform
 
      steps:
        - name: Checkout source code 
@@ -47,7 +47,7 @@ jobs:
          id: fmt
          run: terraform fmt -check
 
-      - name: Terraform validate
+       - name: Terraform validate
          id: validate
          run: terraform validate
 
